@@ -25,7 +25,7 @@ const FilterForm = (props) => {
     const apiKey = process.env.REACT_APP_APIKEY;
     const recipe = await axios.get("https://api.spoonacular.com/recipes/random?apiKey=" + apiKey);
     props.setCurrentRecipe(recipe.data.recipes[0]);
-    history.push('/recipe/' + recipe.data.recipes[0].id)
+    history.push('/recipes/' + recipe.data.recipes[0].id)
   }
 
   const handleCuisineChange = (event) => {
@@ -46,14 +46,14 @@ const FilterForm = (props) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    let link = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_APIKEY}`;
+    let link = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_APIKEY}&addRecipeInformation=true`;
     const values = [[searchText, 'query'], [cuisine, 'cuisine'], [diet, 'diet'], [type, 'type']];
     const filters = values.filter(item => item[0]!=='All' && item[0]!=='');
     filters.forEach((item, idx) => {
       link = link.concat(`&${item[1]}=${item[0]}`)});
-    console.log(link);
     const recipes = await axios.get(link);
-    console.log(recipes);
+    props.setRecipes(recipes.data);
+    history.push('/recipes');
   }
 
   return (

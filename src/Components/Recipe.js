@@ -18,9 +18,12 @@ const Recipe = (props) => {
     }
     getRecipe();
     return (
-      <div>Loading ...</div>
+      <div></div>
     )
   }
+  const renderList = props.recipe.analyzedInstructions.length > 0
+                    ? true 
+                    : false
 
   return (
     <div className='container'>
@@ -48,7 +51,7 @@ const Recipe = (props) => {
         </tbody>
       </table>
       <ol className='guideList'>
-        {props.recipe.analyzedInstructions[0].steps.map((item,idx) => (
+        {renderList && props.recipe.analyzedInstructions[0].steps.map((item,idx) => (
           <li key={idx} className='guide'>{item.step}</li>
         ))}
       </ol>
