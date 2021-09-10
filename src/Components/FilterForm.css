@@ -3,11 +3,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 15%;
+  width: 80%;
   min-width: 150px;
-  margin-left: 10px;
-  margin-top: 10px;
-  background-color: rgb(173, 158, 158);
+  background-color: rgb(197, 194, 194);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 input {
@@ -25,6 +25,10 @@ select {
 .submitButton {
   margin-top: 5px;
   margin-bottom: 5px;
-  height: 40px;
-  width: 90%;
+  height: 60px;
+  width: 20%;
+  min-width: 150px;
+  background-color: lightcoral;
+  color: white;
+  border-radius: 10%;
 }

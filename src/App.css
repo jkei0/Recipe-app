@@ -1,0 +1,23 @@
+.recipesPage {
+  display: flex;
+  justify-content: center;
+}
+
+.recipesPageFilter {
+  margin-top: 5%;
+  min-width: 20%;
+}
+
+.mainPage {
+  margin-top: 10%;
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: auto;
+  background-image: url('backgroundImg.jpg');
+}
