@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
+import './FilterForm.css'
 
 const FilterForm = (props) => {
   const allowedCuisines = ['All','African','American','British','Cajun','Caribbean','Chinese',
@@ -21,7 +22,8 @@ const FilterForm = (props) => {
 
   const history = useHistory();
 
-  const getRecipe = async () => {
+  const getRecipe = async (event) => {
+    event.preventDefault();
     const apiKey = process.env.REACT_APP_APIKEY;
     const recipe = await axios.get("https://api.spoonacular.com/recipes/random?apiKey=" + apiKey);
     props.setCurrentRecipe(recipe.data.recipes[0]);
@@ -58,25 +60,29 @@ const FilterForm = (props) => {
 
   return (
     <div>
-      <button onClick={getRecipe}>Get random recipe</button>
-      <form onSubmit={handleSubmit}>
+      <form className='filterForm' onSubmit={handleSubmit}>
+        <label>Recipe or keyword</label>
         <input value={searchText} onChange={handleSearchTextChange} placeholder='Find a recipe'/>
+        <label>Cuisine</label>
         <select value={cuisine} onChange={handleCuisineChange}>
           {allowedCuisines.map((item,idx) => (
             <option key={idx} value={item}>{item}</option>
           ))}
         </select>
+        <label>Diet</label>
         <select value={diet} onChange={handleDietChange}>
           {allowedDiets.map((item, idx) => (
             <option key={idx} value={item}>{item}</option>
           ))}
         </select>
+        <label>Type</label>
         <select value={type} onChange={handleTypeChange}>
           {allowedTypes.map((item, idx) => (
             <option key={idx} value={item}>{item}</option>
           ))}
         </select>
-        <button onClick={handleSubmit}>Find recipes</button>
+        <button className='submitButton' onClick={handleSubmit}>Find recipes</button>
+        <button className='submitButton' onClick={getRecipe}>Get random recipe</button>
       </form>
     </div> 
   )
