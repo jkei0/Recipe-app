@@ -1,0 +1,42 @@
+.container {
+  background-color: bisque;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.headline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.summary {
+  margin-left: 25px;
+  margin-right: 50px;
+  max-width: 30%;
+}
+
+.img {
+  max-width: 30%;
+  height: auto;
+  padding-right: 50px;
+}
+
+.ingredientTable {
+  margin-top: 100px;
+  margin-bottom: 25px;
+  margin-left: 50px;
+  align-self: flex-start;
+  border: 1px solid black;
+  border-spacing: 25px 10px;
+  font-family: sans-serif;
+  background-color: aqua;
+}
+
+.guide {
+  align-self: flex-start;
+  margin-left: 25px;
+  margin-top: 20px;
+}

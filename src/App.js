@@ -14,8 +14,8 @@ const App = () => {
   return (
     <>
       <Switch>
-        <Route path="/recipe">
-          <Recipe recipe={currentRecipe}/>
+        <Route path="/recipe/:id">
+          <Recipe recipe={currentRecipe} setCurrentRecipe={setCurrentRecipe}/>
         </Route>
         <Route path="/">
           <FilterForm currentRecipe={currentRecipe} 

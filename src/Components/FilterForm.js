@@ -9,7 +9,8 @@ const FilterForm = (props) => {
     const apiKey = process.env.REACT_APP_APIKEY;
     const recipe = await axios.get("https://api.spoonacular.com/recipes/random?apiKey=" + apiKey);
     props.setCurrentRecipe(recipe.data.recipes[0]);
-    history.push('/recipe')
+    console.log(String(recipe.data.recipes[0].id));
+    history.push('/recipe/' + recipe.data.recipes[0].id)
   }
 
   return (
