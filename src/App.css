@@ -1,13 +1,3 @@
-.recipesPage {
-  display: flex;
-  justify-content: center;
-}
-
-.recipesPageFilter {
-  margin-top: 5%;
-  min-width: 20%;
-}
-
 .mainPage {
   margin-top: 10%;
 }

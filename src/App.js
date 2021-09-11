@@ -7,6 +7,7 @@ import {
   Switch,
   Route
 } from "react-router-dom";
+import SearchBar from './Components/SearchBar';
 
 const App = () => {
   const [currentRecipe, setCurrentRecipe] = useState(false);
@@ -17,15 +18,14 @@ const App = () => {
       <Switch>
         <Route path="/recipes/:id">
           <div>
+            <SearchBar setRecipes={setRecipes}/>
             <Recipe recipe={currentRecipe} setCurrentRecipe={setCurrentRecipe}/>
           </div>
         </Route>
         <Route path='/recipes'>
           <div className='recipesPage'>
-            <div className='recipesPageFilter'>
-              <FilterForm currentRecipe={currentRecipe} 
-                          setCurrentRecipe={setCurrentRecipe}
-                          setRecipes={setRecipes}/>
+            <div className='recipesPageSearchBar'>
+              <SearchBar setRecipes={setRecipes}/>
             </div>
             <div className='resipesPageRecipes'>
               <Recipes recipes={recipes} className='recipes'/>
