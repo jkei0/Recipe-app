@@ -1,9 +1,20 @@
 .container {
-  background-color: bisque;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.upperPart {
+  background-color: rgb(231, 223, 223);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  margin-bottom: 50px;
 }
 
 .headline {
@@ -25,29 +36,36 @@
 }
 
 .ingredientTable {
-  margin-top: 100px;
-  margin-bottom: 25px;
-  margin-left: 50px;
   align-self: flex-start;
-  border: 1px solid black;
-  border-spacing: 25px 10px;
-  font-family: sans-serif;
-  background-color: aqua;
-  border-radius: 10%;
+  width: 30%;
+  border-spacing: 25px 15px;
+  border-right: 1px solid black;
 }
 
 .guide {
-  margin-left: 25px;
   margin-top: 20px;
 }
 
 .guideList {
-  align-self: flex-start;
-  max-width: 80%;
-  margin-left: 25px;
+  width: 50%;
   margin-bottom: 100px;
-  border-radius: 1%;
-  padding-bottom: 25px;
-  padding-right: 25px;
-  background-color: rgb(255, 238, 238);
+  margin-left: 10%;
+}
+
+.methods {
+  display: flex;
+  width: 65%;
+  margin-top: 50px;
+}
+
+th {
+  padding-bottom: 10px;
+  padding-top: 0px;
+  font-size: large;
+}
+
+.methodHeadline {
+  font-size: large;
+  margin-top: 7px;
+  margin-left: 20px;
 }

@@ -27,34 +27,41 @@ const Recipe = (props) => {
 
   return (
     <div className='container'>
-      <h3 className='title'>{props.recipe.title}</h3>
-      <div className='headline'>
-        <div dangerouslySetInnerHTML={{__html: props.recipe.summary}} className='summary'/>
-        <img src={props.recipe.image} alt='' className='img'/>
+      <div className='upperPart'>
+        <h3 className='title'>{props.recipe.title}</h3>
+        <div className='headline'>
+          <div dangerouslySetInnerHTML={{__html: props.recipe.summary}} className='summary'/>
+          <img src={props.recipe.image} alt='' className='img'/>
+        </div>
       </div>
-      <table className='ingredientTable'>
-        <thead>
-          <tr><th>Ingredients</th></tr>
-        </thead>
-        <tbody>
-          {props.recipe.extendedIngredients.map((item,idx) => (
-          <tr key={idx} className='ingredientsTableRow'>
-            <td>{item.name}</td>
-            <td>{item.measures.metric.amount > 10 
-              ? Math.ceil(item.measures.metric.amount/10)*10 
-              : item.measures.metric.amount}</td>
-            <td>{item.measures.metric.unitShort === 'inches'
-              ? ''
-              : item.measures.metric.unitShort}</td>
-          </tr>
-      ))}
-        </tbody>
-      </table>
-      <ol className='guideList'>
-        {renderList && props.recipe.analyzedInstructions[0].steps.map((item,idx) => (
-          <li key={idx} className='guide'>{item.step}</li>
+      <div className='methods'>
+        <table className='ingredientTable'>
+          <thead>
+            <tr><th align='left'>Ingredients</th></tr>
+          </thead>
+          <tbody>
+            {props.recipe.extendedIngredients.map((item,idx) => (
+            <tr key={idx} className='ingredientsTableRow'>
+              <td>{item.name}</td>
+              <td>{item.measures.metric.amount > 10 
+                ? Math.ceil(item.measures.metric.amount/10)*10 
+                : item.measures.metric.amount}</td>
+              <td>{item.measures.metric.unitShort === 'inches'
+                ? ''
+                : item.measures.metric.unitShort}</td>
+            </tr>
         ))}
-      </ol>
+          </tbody>
+        </table>
+        <section className='guideList'>
+          <h4 className='methodHeadline'>Methods</h4>
+          <ol>
+            {renderList && props.recipe.analyzedInstructions[0].steps.map((item,idx) => (
+              <li key={idx} className='guide'>{item.step}</li>
+            ))}
+          </ol>
+        </section>
+      </div>
     </div>
   )
 }
