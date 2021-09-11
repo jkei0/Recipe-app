@@ -34,7 +34,7 @@ const App = () => {
         </Route>
         <Route path="/">
           <div className='mainPage'>
-            <FilterForm currentRecipe={currentRecipe} 
+            <FilterForm className='mainPageFilter' currentRecipe={currentRecipe} 
                         setCurrentRecipe={setCurrentRecipe}
                         setRecipes={setRecipes}/>
           </div>

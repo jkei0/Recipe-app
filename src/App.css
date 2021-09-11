@@ -1,7 +1,3 @@
-.mainPage {
-  margin-top: 10%;
-}
-
 .background {
   position: fixed;
   top: 0;
@@ -11,4 +7,13 @@
   overflow: auto;
   /*background-image: url('backgroundImg.jpg');
   */
+}
+
+.mainPage {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('backgroundImg.jpg');
 }
