@@ -7,6 +7,7 @@
 
 .upperPart {
   background-color: rgb(231, 223, 223);
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,28 +23,34 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  width: 60%;
+  margin-bottom: 30px;
 }
 
 .summary {
-  margin-left: 25px;
-  margin-right: 50px;
   width: 30%;
-  min-width: 250px;
+  min-width: 400px;
 }
 
 .img {
-  width: 30%;
-  min-width: 250px;
+  min-width: 400px;
   height: auto;
-  padding-right: 50px;
+}
+
+.gap {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 12px;
+  margin-bottom: 12px;
 }
 
 .ingredientTable {
   align-self: flex-start;
-  width: 30%;
+  width: 20%;
   min-width: 300px;
   border-spacing: 25px 15px;
-  border-right: 1px solid black;
+  border: 1px solid black;
+  margin-bottom: 50px;
 }
 
 .guide {
@@ -51,16 +58,15 @@
 }
 
 .guideList {
-  width: 50%;
-  min-width: 300px;
+  width: 30%;
+  min-width: 400px;
   margin-bottom: 100px;
-  margin-left: 10%;
 }
 
 .methods {
   display: flex;
   flex-wrap: wrap;
-  width: 65%;
+  justify-content: center;
   margin-top: 50px;
 }
 

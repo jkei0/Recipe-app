@@ -30,6 +30,7 @@ const Recipe = (props) => {
         <h3 className='title'>{props.recipe.title}</h3>
         <div className='headline'>
           <div dangerouslySetInnerHTML={{__html: props.recipe.summary}} className='summary'/>
+          <div className='gap'></div>
           <img src={props.recipe.image} alt='' className='img'/>
         </div>
       </div>
@@ -52,6 +53,7 @@ const Recipe = (props) => {
         ))}
           </tbody>
         </table>
+        <div className='gap'></div><div className='gap'></div><div className='gap'></div>
         <section className='guideList'>
           <h4 className='methodHeadline'>Methods</h4>
           <ol>

@@ -16,6 +16,7 @@ const Recipes = (props) => {
         <div key={item.id} className='singleDish'>
           <div className='presentation'>
             <div dangerouslySetInnerHTML={{__html: item.summary}} className='dishSummary'/>
+            <div className='gap'></div><div className='gap'></div>
             <img className='dishImage' src={item.image} alt='img'></img>
           </div>
           <h4 className='title'><Link to={`/recipes/${item.id}`}>{item.title}</Link></h4>
