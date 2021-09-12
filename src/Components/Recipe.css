@@ -19,6 +19,7 @@
 
 .headline {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 }
@@ -26,11 +27,13 @@
 .summary {
   margin-left: 25px;
   margin-right: 50px;
-  max-width: 30%;
+  width: 30%;
+  min-width: 250px;
 }
 
 .img {
-  max-width: 30%;
+  width: 30%;
+  min-width: 250px;
   height: auto;
   padding-right: 50px;
 }
@@ -38,6 +41,7 @@
 .ingredientTable {
   align-self: flex-start;
   width: 30%;
+  min-width: 300px;
   border-spacing: 25px 15px;
   border-right: 1px solid black;
 }
@@ -48,12 +52,14 @@
 
 .guideList {
   width: 50%;
+  min-width: 300px;
   margin-bottom: 100px;
   margin-left: 10%;
 }
 
 .methods {
   display: flex;
+  flex-wrap: wrap;
   width: 65%;
   margin-top: 50px;
 }

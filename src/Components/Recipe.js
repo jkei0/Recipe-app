@@ -13,14 +13,13 @@ const Recipe = (props) => {
         + '/information' 
         + '?apiKey=' 
         + process.env.REACT_APP_APIKEY);
-      console.log(recipe);
       props.setCurrentRecipe(recipe.data);
     }
     getRecipe();
     return (
       <div></div>
     )
-  }
+  };
   const renderList = props.recipe.analyzedInstructions.length > 0
                     ? true 
                     : false
